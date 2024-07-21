@@ -1,12 +1,22 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
+import LoginScreen from './screens/auth/Login';
+
+import { Mulish_400Regular, useFonts } from "@expo-google-fonts/mulish";
+import SignupScreen from './screens/auth/Signup';
 
 export default function App() {
+
+  const [fontsLoaded] = useFonts({Mulish_400Regular})
+
+  if (!fontsLoaded) {
+      return null;
+  }
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+
+    // <LoginScreen />
+    <SignupScreen />
   );
 }
 
